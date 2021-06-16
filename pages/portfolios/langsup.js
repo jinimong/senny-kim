@@ -1,13 +1,31 @@
-import Image from 'next/image';
-import styled, { css } from 'styled-components';
+import Head from 'next/head';
+import { useEffect, useState, useCallback } from 'react';
+import styled from 'styled-components';
+import Dots from '../../components/atoms/Dots';
+import Navigation from '../../components/atoms/Navigation';
+import Tag from '../../components/atoms/Tag';
+import { flexCenterStyle } from '../../styles/common';
 
-const flexCenterStyle = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Container = styled.div`
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > .snap {
+    scroll-snap-align: start;
+  }
 `;
 
-const MainContainer = styled.div`
+const MainContainer = styled.section`
   ${flexCenterStyle}
   flex-direction: column;
   background-color: var(--blue);
@@ -35,79 +53,59 @@ const SubTitle = styled.div`
   font-weight: normal;
 `;
 
-const Tag = styled.div`
-  ${flexCenterStyle}
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid #c7cdff;
-  font-size: 1rem;
-  letter-spacing: 0.165em;
-  width: 10rem;
-  height: 3.5rem;
-  left: -3.5rem;
-  position: fixed;
-  transform: rotate(-90deg);
-  z-index: 2;
-  cursor: pointer;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-`;
-
-const Navigation = styled.nav`
+const DetailContainer = styled.section`
   width: 100vw;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 10%;
-  left: 118px;
-
-  .name {
-    margin-left: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-weight: normal;
-  }
-`;
-
-const Dots = styled.div`
-  background-image: url('/assets/dots.png');
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  width: 100%;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
+  position: relative;
 `;
 
 export default function LangsUp() {
+  const [offsetY, setOffsetY] = useState(0);
+  const [clientHeight, setClientHeight] = useState(1);
+  const halfClientHeight = clientHeight / 2;
+
+  useEffect(() => {
+    setClientHeight(document.documentElement.clientHeight);
+  }, []);
+
+  const onScroll = useCallback((e) => {
+    setOffsetY(e.target.scrollTop);
+  }, []);
+
   return (
-    <MainContainer>
-      <Navigation>
-        <div>
-          <Image src="/assets/logo.png" width={32} height={32} alt="logo" />
-        </div>
-        <div className="name">
-          <span>KIM</span>
-          <span>SEHYUN</span>
-        </div>
-      </Navigation>
-      <Titles>
-        <SubTitle>Product Design</SubTitle>
-        <Title style={{ marginTop: '2rem' }}>
-          Languages Speak Up,{' '}
-          <span style={{ fontWeight: '900' }}>langsup!</span>
-        </Title>
-        <SubTitle style={{ marginTop: '1rem' }}>
-          1:1 Video English Study Platform
-        </SubTitle>
-      </Titles>
-      <Tag>
-        <a href="https://langsup.io" target="_blank">
-          langsup.io
-        </a>
-      </Tag>
-      <Dots style={{ backgroundPosition: 'left bottom' }} />
-      <Dots style={{ backgroundPosition: 'right center' }} />
-    </MainContainer>
+    <Container onScroll={onScroll}>
+      <Head>
+        <title>langsup</title>
+      </Head>
+      <MainContainer className="snap">
+        <Navigation
+          color={offsetY < clientHeight ? 'var(--white)' : 'var(--navy)'}
+        />
+        <Titles
+          style={{
+            opacity: (halfClientHeight - offsetY) / halfClientHeight,
+          }}
+        >
+          <SubTitle>Product Design</SubTitle>
+          <Title style={{ marginTop: '2rem' }}>
+            Languages Speak Up,{' '}
+            <span style={{ fontWeight: '900' }}>langsup!</span>
+          </Title>
+          <SubTitle style={{ marginTop: '1rem' }}>
+            1:1 Video English Study Platform
+          </SubTitle>
+        </Titles>
+        <Tag
+          color={offsetY < halfClientHeight ? 'var(--white)' : 'var(--blue)'}
+        >
+          <a href="https://langsup.io" target="_blank">
+            langsup.io
+          </a>
+        </Tag>
+        <Dots style={{ backgroundPosition: `left bottom` }} />
+        <Dots style={{ backgroundPosition: `right center` }} />
+      </MainContainer>
+      <DetailContainer className="snap" />
+    </Container>
   );
 }
