@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
 import Navigation from '../../components/atoms/Navigation';
 import Tag from '../../components/atoms/Tag';
-import { flexCenterStyle } from '../../styles/common';
+import { flexCenterStyle, hiddenScrollStyle } from '../../styles/common';
 
 const Container = styled.div`
   scroll-snap-type: y mandatory;
@@ -12,13 +12,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  ${hiddenScrollStyle}
 
   & > .snap {
     scroll-snap-align: start;

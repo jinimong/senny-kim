@@ -5,3 +5,13 @@ export const flexCenterStyle = css`
   justify-content: center;
   align-items: center;
 `;
+
+export const hiddenScrollStyle = css`
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
