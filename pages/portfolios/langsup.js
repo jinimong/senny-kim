@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
@@ -7,7 +8,7 @@ import Tag from '../../components/atoms/Tag';
 import { flexCenterStyle, hiddenScrollStyle } from '../../styles/common';
 
 const Container = styled.div`
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
   width: 100vw;
   height: 100vh;
@@ -49,7 +50,7 @@ const SubTitle = styled.div`
 
 const DetailContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   position: relative;
 `;
 
@@ -99,7 +100,9 @@ export default function LangsUp() {
         <Dots style={{ backgroundPosition: `left bottom` }} />
         <Dots style={{ backgroundPosition: `right center` }} />
       </MainContainer>
-      <DetailContainer className="snap" />
+      <DetailContainer className="snap">
+        <Image src={'/assets/design-system.svg'} layout="fill" />
+      </DetailContainer>
     </Container>
   );
 }
