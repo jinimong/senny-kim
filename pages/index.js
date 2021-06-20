@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 
 const mainPageUri = '/portfolios/langsup';
+
 export default function RedirectPage() {
   const router = useRouter();
   if (typeof window !== 'undefined') {

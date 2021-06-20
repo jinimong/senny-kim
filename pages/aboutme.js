@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import Navigation from '../components/atoms/Navigation';
 import { flexCenterStyle, hiddenScrollStyle } from '../styles/common';
@@ -52,6 +53,9 @@ const Section = styled.section`
 export default function AboutMe() {
   return (
     <Container>
+      <Head>
+        <title>about me</title>
+      </Head>
       <Navigation />
       <Content>
         <Section>
@@ -59,7 +63,7 @@ export default function AboutMe() {
           {'\n'}I am a UX/UI designer in Seoul.
         </Section>
         <Section>
-          <h2>Work Experience</h2>
+          <h2>WORK EXPERIENCE</h2>
           <h3>
             IB the TOP / langsup (07/2020 - Present) Seoul, Korea
             {'\n'}
