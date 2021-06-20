@@ -33,6 +33,16 @@ const MainContainer = styled.section`
   position: relative;
   text-align: center;
   color: var(--white);
+
+  .icons {
+    width: 70%;
+    height: 60%;
+    position: relative;
+
+    span {
+      position: absolute;
+    }
+  }
 `;
 
 const Titles = styled.div`
@@ -113,6 +123,13 @@ export default function LangsUp() {
         </Tag>
         <Dots style={{ backgroundPosition: `left bottom` }} />
         <Dots style={{ backgroundPosition: `right center` }} />
+        <div className="icons">
+          <span style={{ top: '25%', left: '0' }}>💬</span>
+          <span style={{ top: '0', right: '16%' }}>🗯</span>
+          <span style={{ top: '80%', left: '15%' }}>😙</span>
+          <span style={{ top: '60%', right: '0' }}>😄</span>
+          <span style={{ bottom: '0', right: '10%' }}>💻</span>
+        </div>
       </MainContainer>
       <DetailContainer className="snap">
         <DesignSystem />
