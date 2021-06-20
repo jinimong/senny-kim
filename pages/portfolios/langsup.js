@@ -1,10 +1,14 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
 import Navigation from '../../components/atoms/Navigation';
 import Tag from '../../components/atoms/Tag';
+import AboutLangsup from '../../components/molecules/langsup/AboutLangsup';
+import Branding from '../../components/molecules/langsup/Branding';
+import DesignSystem from '../../components/molecules/langsup/DesignSystem';
+import Screens from '../../components/molecules/langsup/Screens';
+import ServiceStrategy from '../../components/molecules/langsup/ServiceStrategy';
 import { flexCenterStyle, hiddenScrollStyle } from '../../styles/common';
 
 const Container = styled.div`
@@ -52,6 +56,16 @@ const DetailContainer = styled.section`
   width: 100vw;
   height: 200vh;
   position: relative;
+
+  h3 {
+    padding-top: 8rem;
+    margin-bottom: 5.25rem;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.875rem;
+    line-height: 2rem;
+    color: var(--blue);
+  }
 `;
 
 export default function LangsUp() {
@@ -72,10 +86,10 @@ export default function LangsUp() {
       <Head>
         <title>langsup</title>
       </Head>
+      <Navigation
+        color={offsetY < clientHeight ? 'var(--white)' : 'var(--navy)'}
+      />
       <MainContainer className="snap">
-        <Navigation
-          color={offsetY < clientHeight ? 'var(--white)' : 'var(--navy)'}
-        />
         <Titles
           style={{
             opacity: (halfClientHeight - offsetY) / halfClientHeight,
@@ -101,7 +115,11 @@ export default function LangsUp() {
         <Dots style={{ backgroundPosition: `right center` }} />
       </MainContainer>
       <DetailContainer className="snap">
-        <Image src={'/assets/design-system.svg'} layout="fill" />
+        <DesignSystem />
+        <AboutLangsup />
+        <ServiceStrategy />
+        <Branding />
+        <Screens />
       </DetailContainer>
     </Container>
   );
