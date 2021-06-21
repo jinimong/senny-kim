@@ -211,7 +211,7 @@ const DesignSystem = () => (
     >
       {images.map(({ title, src }) => {
         return (
-          <div>
+          <div key={title}>
             <SmallTitle>{title}</SmallTitle>
             <div
               style={{

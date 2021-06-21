@@ -9,9 +9,9 @@ const videos = [
         height="171"
         src="https://www.youtube.com/embed/qOwCpAaqJRM"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     ),
     description: '놀면서 대화를 하는 것만으로도 실력이 월등이 높아질 수 있어요',
@@ -24,9 +24,9 @@ const videos = [
         height="171"
         src="https://www.youtube.com/embed/K698U6HdGSQ"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     ),
     description:
@@ -40,9 +40,9 @@ const videos = [
         height="171"
         src="https://www.youtube.com/embed/P9KMs4JtSmU"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     ),
     description:
@@ -56,9 +56,9 @@ const videos = [
         height="171"
         src="https://www.youtube.com/embed/AiYt4dSEaNQ"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     ),
     description:
