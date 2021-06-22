@@ -69,7 +69,6 @@ const videos = [
 const Container = styled.div`
   ul {
     width: 22.5rem;
-    margin-top: 4.5rem;
     text-align: left;
     font-size: 1rem;
     line-height: 1.5rem;
