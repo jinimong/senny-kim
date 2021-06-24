@@ -27,7 +27,8 @@ const Phones = styled.div`
   & > div {
     position: relative;
     width: 100%;
-    min-height: 40rem;
+    min-height: 43.25rem;
+    max-width: 23rem;
     ${flexCenterStyle}
   }
 
