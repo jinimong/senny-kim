@@ -7,6 +7,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 80vw;
   margin: auto;
+  margin-bottom: 5rem;
 `;
 
 const Label = styled.div`

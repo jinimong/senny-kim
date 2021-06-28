@@ -61,7 +61,7 @@ const ActiveLink = ({ children, href }) => {
   );
 };
 
-const Navigation = ({ color }) => (
+const Navigation = ({ color = 'inherit' }) => (
   <Container color={color}>
     <Links>
       <ActiveLink href="/aboutme">ABOUT ME</ActiveLink>
@@ -70,7 +70,7 @@ const Navigation = ({ color }) => (
       <span>|</span>
       <ActiveLink href="/portfolios/music-app">Music App</ActiveLink>
       <span>|</span>
-      <ActiveLink href="/portfolios/concerts">Concert</ActiveLink>
+      <ActiveLink href="/portfolios/concerts">Concerts</ActiveLink>
     </Links>
     <Logo>
       <Link href="/portfolios/langsup">

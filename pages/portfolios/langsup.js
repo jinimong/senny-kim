@@ -2,8 +2,10 @@ import Head from 'next/head';
 import { useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
+import Footer from '../../components/atoms/Footer';
 import Navigation from '../../components/atoms/Navigation';
 import Tag from '../../components/atoms/Tag';
+import Titles from '../../components/atoms/Titles';
 import AboutLangsup from '../../components/molecules/langsup/AboutLangsup';
 import Branding from '../../components/molecules/langsup/Branding';
 import DesignSystem from '../../components/molecules/langsup/DesignSystem';
@@ -45,13 +47,6 @@ const MainContainer = styled.section`
   }
 `;
 
-const Titles = styled.div`
-  ${flexCenterStyle}
-  flex-direction: column;
-  position: fixed;
-  top: 15%;
-`;
-
 const Title = styled.div`
   font-size: 2rem;
   font-weight: 300;
@@ -64,7 +59,8 @@ const SubTitle = styled.div`
 
 const DetailContainer = styled.section`
   width: 100vw;
-  height: 200vh;
+  display: block;
+  overflow-y: auto;
   position: relative;
 
   h3 {
@@ -137,6 +133,7 @@ export default function LangsUp() {
         <ServiceStrategy />
         <Branding />
         <Screens />
+        <Footer backgroundColor="var(--blue)" color="var(--white)" />
       </DetailContainer>
     </Container>
   );
