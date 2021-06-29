@@ -145,6 +145,11 @@ export default function LangsUp() {
           imageSrc="/assets/weeffect.png"
           videoCode="WCMXYogyN7I"
         />
+        <Poster
+          title="REDDY & G2 @ Vancouver & Toronto 2017 JUL"
+          imageSrc="/assets/hilite.png"
+          videoCode="xe-rhmpXlc8"
+        />
         <Footer backgroundColor="var(--charcoal)" color="var(--white)" />
       </DetailContainer>
     </Container>
