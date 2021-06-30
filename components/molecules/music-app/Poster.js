@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Poster = ({ title, imageSrc, videoCode }) => (
+const Poster = ({ children, title, imageSrc, videoCode }) => (
   <div style={{ color: 'var(--charcoal)' }} className="w-3/4 mx-auto">
     <div
       className="mt-44 font-bold text-xl mx-auto"
@@ -36,6 +36,7 @@ const Poster = ({ title, imageSrc, videoCode }) => (
         ></iframe>
       </div>
     </div>
+    {children}
   </div>
 );
 
