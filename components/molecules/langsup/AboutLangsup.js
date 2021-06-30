@@ -14,7 +14,7 @@ const videos = [
         allowFullScreen
       />
     ),
-    description: '놀면서 대화를 하는 것만으로도 실력이 월등이 높아질 수 있어요',
+    description: `"놀면서 대화를 하는 것만으로도 실력이 월등이 높아질 수 있어요"`,
   },
   {
     id: 1,
@@ -29,8 +29,7 @@ const videos = [
         allowFullScreen
       />
     ),
-    description:
-      '주제가 재밌어서 저도 모르게 너무 신나서 튜터랑 막 이야기를 하고 있는 거에요. 영어로!',
+    description: `"주제가 재밌어서 저도 모르게 너무 신나서 튜터랑 막 이야기를 하고 있는 거에요. 영어로!"`,
   },
   {
     id: 2,
@@ -45,8 +44,7 @@ const videos = [
         allowFullScreen
       />
     ),
-    description:
-      '외국인을 만나면 말 한마디를 못했어요. 지금은 나도 영어를 대화할 수 있구나하는 자신감이 생겼어요.',
+    description: `"외국인을 만나면 말 한마디를 못했어요. 지금은 나도 영어를 대화할 수 있구나하는 자신감이 생겼어요."`,
   },
   {
     id: 3,
@@ -61,8 +59,7 @@ const videos = [
         allowFullScreen
       />
     ),
-    description:
-      '스페인어로 대화하는데 25분이 어떻게 가는지 모르게 대화에 몰입했어요.',
+    description: `"스페인어로 대화하는데 25분이 어떻게 가는지 모르게 대화에 몰입했어요."`,
   },
 ];
 
