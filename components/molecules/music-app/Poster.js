@@ -2,10 +2,17 @@ import Image from 'next/image';
 
 const Poster = ({ title, imageSrc, videoCode }) => (
   <div style={{ color: 'var(--charcoal)' }} className="w-3/4 mx-auto">
-    <div className="mt-44 font-bold text-xl">{title}</div>
     <div
-      className="mt-8 w-full  flex justify-between align-center"
-      style={{ height: '32rem' }}
+      className="mt-44 font-bold text-xl mx-auto"
+      style={{
+        maxWidth: '72rem',
+      }}
+    >
+      {title}
+    </div>
+    <div
+      className="mt-8 flex justify-between align-center mx-auto"
+      style={{ height: '32rem', maxWidth: '72rem' }}
     >
       <div className="w-96 relative">
         <Image
@@ -25,7 +32,7 @@ const Poster = ({ title, imageSrc, videoCode }) => (
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>
