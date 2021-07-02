@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  width: 50vw;
+  width: auto;
   height: 70vh;
   text-align: left;
   margin: auto;
