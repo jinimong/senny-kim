@@ -7,7 +7,7 @@ export default {
     site_name: `Kim Sehyun's Portfolio`,
     images: [
       {
-        url: 'https://ibb.co/w4JgPPw',
+        url: 'https://i.ibb.co/5LY4SSn/image-17.png',
       },
     ],
   },
