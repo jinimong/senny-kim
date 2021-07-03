@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import { useEffect, useState, useCallback } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
 import Footer from '../../components/atoms/Footer';
 import Navigation from '../../components/atoms/Navigation';
 import Tag from '../../components/atoms/Tag';
 import Titles from '../../components/atoms/Titles';
+import { useScrollContext } from '../../components/contexts/ScrollContextProvider';
 import AboutLangsup from '../../components/molecules/langsup/AboutLangsup';
 import Branding from '../../components/molecules/langsup/Branding';
 import DesignSystem from '../../components/molecules/langsup/DesignSystem';
@@ -75,17 +76,8 @@ const DetailContainer = styled.section`
 `;
 
 export default function LangsUp() {
-  const [offsetY, setOffsetY] = useState(0);
-  const [clientHeight, setClientHeight] = useState(1);
+  const { offsetY, clientHeight, onScroll } = useScrollContext();
   const halfClientHeight = clientHeight / 2;
-
-  useEffect(() => {
-    setClientHeight(document.documentElement.clientHeight);
-  }, []);
-
-  const onScroll = useCallback((e) => {
-    setOffsetY(e.target.scrollTop);
-  }, []);
 
   return (
     <Container onScroll={onScroll}>
