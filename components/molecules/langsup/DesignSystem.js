@@ -154,7 +154,7 @@ const SmallTitle = styled.h5`
 
 const DesignSystem = () => (
   <Container>
-    <h3>Design System</h3>
+    <h3 style={{ paddingTop: '8rem' }}>Design System</h3>
     <div
       style={{
         marginTop: '2.5rem',

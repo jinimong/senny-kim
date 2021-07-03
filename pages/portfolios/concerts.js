@@ -93,7 +93,7 @@ export default function Concerts() {
   return (
     <Container onScroll={onScroll}>
       <Head>
-        <title>music app</title>
+        <title>concerts</title>
       </Head>
       <Navigation
         color={offsetY < clientHeight ? 'var(--white)' : 'var(--charcoal)'}

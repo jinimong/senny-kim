@@ -14,7 +14,7 @@ import ServiceStrategy from '../../components/molecules/langsup/ServiceStrategy'
 import { flexCenterStyle, hiddenScrollStyle } from '../../styles/common';
 
 const Container = styled.div`
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
   width: 100vw;
   height: 100vh;
@@ -64,7 +64,7 @@ const DetailContainer = styled.section`
   position: relative;
 
   h3 {
-    padding-top: 8rem;
+    padding-top: 16rem;
     margin-bottom: 5.25rem;
     text-align: center;
     font-weight: 900;

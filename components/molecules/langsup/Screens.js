@@ -39,6 +39,7 @@ const Tag = styled.div`
 const Phones = styled.div`
   ${flexCenterStyle}
   width: 100%;
+  padding-left: 3rem;
 
   & > div {
     position: relative;
