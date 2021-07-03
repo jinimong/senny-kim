@@ -4,7 +4,7 @@ import Navigation from '../components/atoms/Navigation';
 import { flexCenterStyle, hiddenScrollStyle } from '../styles/common';
 
 const Container = styled.div`
-  background: rgba(0, 0, 0, 0.7);
+  background: #4c4c4c;
   color: #ffffff;
   width: 100vw;
   height: 100vh;
@@ -14,13 +14,23 @@ const Container = styled.div`
 
 const Content = styled.div`
   width: auto;
-  height: 70vh;
+  height: 80vh;
+  padding-bottom: 20vh;
   text-align: left;
   margin: auto;
+  margin-bottom: 0;
   white-space: pre-wrap;
   line-height: 1.5rem;
   overflow-y: auto;
   ${hiddenScrollStyle}
+`;
+
+const BottomBlur = styled.div`
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  width: 100%;
+  background-image: linear-gradient(transparent, #4c4c4c);
 `;
 
 const Section = styled.section`
@@ -126,6 +136,7 @@ export default function AboutMe() {
             <li>• Winter Semester exchange student </li>
           </ul>
         </Section>
+        <BottomBlur />
       </Content>
     </Container>
   );
