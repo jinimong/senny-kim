@@ -119,6 +119,32 @@ export default function LangsUp() {
         </Tag>
         <Dots style={{ backgroundPosition: `left bottom` }} />
         <Dots style={{ backgroundPosition: `right center` }} />
+        <div
+          className="absolute -bottom-1/3 left-0 right-0 mx-auto pl-6 w-2/3 h-full flex justify-center animate-fade-in"
+          style={{ opacity: 1 - offsetY / clientHeight }}
+        >
+          <div className="relative w-72 h-2/3 translate-y-40">
+            <Image
+              src="/assets/message-2.png"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+          <div className="relative w-72 h-2/3 translate-y-20">
+            <Image
+              src="/assets/signup-1.png"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+          <div className="relative w-72 h-2/3">
+            <Image
+              src="/assets/tutor-search.png"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
         <div className="icons">
           <span style={{ top: '25%', left: '0' }}>💬</span>
           <span style={{ top: '0', right: '16%' }}>🗯</span>
