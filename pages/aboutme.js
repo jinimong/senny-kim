@@ -1,3 +1,6 @@
+import { Icon } from '@iconify/react';
+import linkedinIcon from '@iconify/icons-simple-icons/linkedin';
+import gmailIcon from '@iconify/icons-simple-icons/gmail';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Navigation from '../components/atoms/Navigation';
@@ -14,8 +17,8 @@ const Container = styled.div`
 
 const Content = styled.div`
   width: auto;
-  height: 80vh;
-  padding-bottom: 20vh;
+  height: 85vh;
+  padding-bottom: 15vh;
   text-align: left;
   margin: auto;
   margin-bottom: 0;
@@ -28,9 +31,9 @@ const Content = styled.div`
 const BottomBlur = styled.div`
   position: fixed;
   bottom: 0;
-  height: 20vh;
+  height: 15vh;
   width: 100%;
-  background-image: linear-gradient(transparent, #4c4c4c);
+  background-image: linear-gradient(transparent, #4c4c4c 50%);
 `;
 
 const Section = styled.section`
@@ -60,6 +63,10 @@ const Section = styled.section`
   }
 `;
 
+const StickySection = styled.div`
+  background-image: linear-gradient(#4c4c4c 50%, transparent);
+`;
+
 export default function AboutMe() {
   return (
     <Container>
@@ -72,6 +79,32 @@ export default function AboutMe() {
           Hello, It’s Sehyun.
           {'\n'}I am a UX/UI designer in Seoul.
         </Section>
+        <StickySection className="sticky h-12 top-0">
+          <div className="mt-6 flex items-center space-x-4">
+            <div className="flex items-center space-x-1">
+              <Icon className="text-xl" icon={linkedinIcon} />
+              <span>
+                <a
+                  href="https://www.linkedin.com/in/sehyunkim1209/"
+                  target="_blank"
+                >
+                  linkedin
+                </a>
+              </span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <Icon className="text-xl" icon={gmailIcon} />
+              <span>
+                <a
+                  data-auto-recognition="true"
+                  href="mailto:sennykim1209@gmail.com"
+                >
+                  email
+                </a>
+              </span>
+            </div>
+          </div>
+        </StickySection>
         <Section>
           <h2>WORK EXPERIENCE</h2>
           <h3>
