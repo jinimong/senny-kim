@@ -21,7 +21,6 @@ const Logo = styled.div`
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   cursor: pointer;
-  ${flexCenterStyle}
 
   &:hover {
     opacity: 0.6;
@@ -74,7 +73,7 @@ const Navigation = ({ color = 'inherit' }) => (
     </Links>
     <Logo>
       <Link href="/portfolios/langsup">
-        <>
+        <a className="flex items-center justify-center">
           <Image
             src="/assets/logo.png"
             width={32}
@@ -84,7 +83,7 @@ const Navigation = ({ color = 'inherit' }) => (
             placeholder="blur"
           />
           <div className="name">{`KIM\nSEHYUN`}</div>
-        </>
+        </a>
       </Link>
     </Logo>
   </Container>
