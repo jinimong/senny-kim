@@ -36,7 +36,9 @@ const Poster = ({ children, title, imageSrc, videoCode }) => (
         ></iframe>
       </div>
     </div>
-    {children}
+    <div className="mx-auto" style={{ height: '32rem', maxWidth: '72rem' }}>
+      {children}
+    </div>
   </div>
 );
 
