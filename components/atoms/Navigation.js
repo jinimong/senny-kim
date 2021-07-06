@@ -9,7 +9,7 @@ const Container = styled.nav`
   width: 100vw;
   height: 2rem;
   top: 5%;
-  z-index: 2;
+  z-index: 30;
   color: ${({ color }) => color};
   ${flexCenterStyle}
 `;

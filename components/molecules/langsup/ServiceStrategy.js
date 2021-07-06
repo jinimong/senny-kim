@@ -14,7 +14,8 @@ const Pill = styled.div`
   background-color: var(--blue);
   color: var(--white);
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   width: 9.375rem;
   height: 9.375rem;
   ${flexCenterStyle}

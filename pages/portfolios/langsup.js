@@ -63,6 +63,8 @@ const DetailContainer = styled.section`
   display: block;
   overflow-y: auto;
   position: relative;
+  background: #fff;
+  z-index: 20;
 
   h3 {
     padding-top: 16rem;
@@ -112,29 +114,42 @@ export default function LangsUp() {
         <Dots style={{ backgroundPosition: `left bottom` }} />
         <Dots style={{ backgroundPosition: `right center` }} />
         <div
-          className="absolute -bottom-1/3 left-0 right-0 mx-auto pl-6 w-2/3 h-full flex justify-center animate-fade-in"
-          style={{ opacity: 1 - offsetY / clientHeight }}
+          className="absolute top-1/3 h-full flex justify-between items-center ml-60 animate-fade-in z-10"
+          style={{
+            opacity: 1 - offsetY / clientHeight,
+            width: '54rem',
+            height: '45rem',
+          }}
         >
-          <div className="relative w-72 h-2/3 translate-y-40">
+          <div className="relative w-72 h-full translate-y-48">
             <Image
               src="/assets/message-2.png"
               layout="fill"
               objectFit="contain"
             />
           </div>
-          <div className="relative w-72 h-2/3 translate-y-20">
+          <div className="relative w-72 h-full -translate-y-4">
             <Image
               src="/assets/signup-1.png"
               layout="fill"
               objectFit="contain"
             />
           </div>
-          <div className="relative w-72 h-2/3">
+          <div className="relative w-72 h-full -translate-y-56">
             <Image
               src="/assets/tutor-search.png"
               layout="fill"
               objectFit="contain"
             />
+          </div>
+          <div className="absolute w-72 h-full top-80 right-0">
+            <div className="relative w-full h-full">
+              <Image
+                src="/assets/signup-2.png"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
           </div>
         </div>
         <div className="icons">
