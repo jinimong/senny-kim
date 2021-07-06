@@ -7,7 +7,7 @@ const Container = styled.div`
   flex-direction: column;
 
   h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem !important;
   }
 
   h5 {
