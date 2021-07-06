@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Footer from '../../components/atoms/Footer';
 import Navigation from '../../components/atoms/Navigation';
 import Tag from '../../components/atoms/Tag';
 import Titles from '../../components/atoms/Titles';
+import { useScrollContext } from '../../components/contexts/ScrollContextProvider';
 import Description from '../../components/molecules/music-app/Description';
 import Poster from '../../components/molecules/music-app/Poster';
 import { flexCenterStyle, hiddenScrollStyle } from '../../styles/common';
@@ -26,7 +26,7 @@ const Container = styled.div`
 const MainContainer = styled.section`
   ${flexCenterStyle}
   flex-direction: column;
-  background-color: var(--charcoal);
+  background-color: black;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -41,11 +41,6 @@ const MainContainer = styled.section`
     span {
       position: absolute;
     }
-  }
-
-  iframe {
-    width: 100vw;
-    height: calc(100vw / 1.77);
   }
 `;
 
@@ -78,17 +73,8 @@ const DetailContainer = styled.section`
 `;
 
 export default function Concerts() {
-  const [offsetY, setOffsetY] = useState(0);
-  const [clientHeight, setClientHeight] = useState(1);
+  const { offsetY, clientHeight, onScroll } = useScrollContext();
   const halfClientHeight = clientHeight / 2;
-
-  useEffect(() => {
-    setClientHeight(document.documentElement.clientHeight);
-  }, []);
-
-  const onScroll = useCallback((e) => {
-    setOffsetY(e.target.scrollTop);
-  }, []);
 
   return (
     <Container onScroll={onScroll}>
@@ -118,15 +104,11 @@ export default function Concerts() {
             View More
           </a>
         </Tag>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/WCMXYogyN7I?autoplay=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <div className="w-full h-full flex items-center justify-center">
+          <video loop autoPlay width={clientHeight * 1.77}>
+            <source src="/assets/concerts.mp4" type="video/mp4" />
+          </video>
+        </div>
       </MainContainer>
       <DetailContainer className="snap">
         <Description />
