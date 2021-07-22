@@ -36,6 +36,7 @@ const MainContainer = styled.section`
   position: relative;
   text-align: center;
   color: var(--white);
+  overflow-y: hidden;
 
   .icons {
     width: 70%;
@@ -64,7 +65,6 @@ const DetailContainer = styled.section`
   overflow-y: auto;
   position: relative;
   background: #fff;
-  z-index: 20;
 
   h3 {
     padding-top: 16rem;

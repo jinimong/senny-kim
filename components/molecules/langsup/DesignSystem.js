@@ -135,7 +135,6 @@ const images = [
   { title: 'Main Colours', src: '/assets/main-colours.png' },
   { title: 'Notification Colours', src: '/assets/notification-colours.png' },
   { title: 'Background Colours', src: '/assets/background-colours.png' },
-  { title: 'Icon Sets', src: '/assets/icon-sets.png' },
 ];
 
 const Container = styled.div`
@@ -150,6 +149,7 @@ const SmallTitle = styled.h5`
   line-height: 1.5rem;
   color: var(--gray);
   margin-bottom: 2rem;
+  font-weight: 700;
 `;
 
 const DesignSystem = () => (
@@ -202,11 +202,12 @@ const DesignSystem = () => (
     </div>
     <div
       style={{
-        marginTop: '4rem',
-        width: '50%',
+        marginTop: '3rem',
+        width: '70%',
         height: '85vh',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}
     >
       {images.map(({ title, src }) => {
@@ -219,6 +220,8 @@ const DesignSystem = () => (
                 width: '70%',
                 padding: '1rem',
                 height: '100%',
+                minWidth: '12rem',
+                minHeight: '26rem',
               }}
             >
               <Image
