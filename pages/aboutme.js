@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  width: auto;
+  width: 100%;
   height: 85vh;
   padding-bottom: 15vh;
   text-align: left;
@@ -37,6 +37,9 @@ const BottomBlur = styled.div`
 `;
 
 const Section = styled.section`
+  width: 32rem;
+  margin: auto;
+
   h2 {
     text-decoration: underline;
     font-weight: 500;
@@ -64,6 +67,8 @@ const Section = styled.section`
 `;
 
 const StickySection = styled.div`
+  width: 32rem;
+  margin: auto;
   background-image: linear-gradient(var(--charcoal) 50%, transparent);
 `;
 
