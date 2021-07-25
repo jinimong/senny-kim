@@ -12,7 +12,7 @@ const Container = styled.div`
   height: 100vh;
   position: relative;
   overflow-y: auto;
-  background-color: var(--charcoal);
+  background-color: #091224;
   color: var(--lightgreen);
   ${hiddenScrollStyle}
 `;
@@ -29,6 +29,7 @@ const MainContainer = styled.section`
   flex-direction: column;
   position: relative;
   text-align: center;
+  margin-bottom: 6rem;
 `;
 
 const MusicApp = () => {

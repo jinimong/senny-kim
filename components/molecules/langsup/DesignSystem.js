@@ -157,7 +157,6 @@ const DesignSystem = () => (
     <h3 style={{ paddingTop: '8rem' }}>Design System</h3>
     <div
       style={{
-        marginTop: '2.5rem',
         position: 'relative',
         width: '50%',
         height: '25vh',

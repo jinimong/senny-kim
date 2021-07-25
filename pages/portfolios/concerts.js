@@ -93,9 +93,8 @@ export default function Concerts() {
           <SubTitle>Marketing & Concerts</SubTitle>
         </Titles>
         <Tag
-          color={
-            offsetY < halfClientHeight ? 'var(--white)' : 'var(--charcoal)'
-          }
+          color={offsetY < halfClientHeight ? 'var(--white)' : 'black'}
+          borderColor="black"
         >
           <a
             href="https://www.youtube.com/channel/UCWlyjCeMSyt-2exNJ-D1XTA/videos"

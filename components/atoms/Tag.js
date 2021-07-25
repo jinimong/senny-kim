@@ -5,7 +5,7 @@ const Tag = styled.div`
   ${flexCenterStyle}
   color: ${({ color }) => color};
   background: rgba(255, 255, 255, 0.3);
-  border: 1px solid #c7cdff;
+  border: 1px solid ${({ borderColor = '#c7cdff' }) => borderColor};
   font-size: 1rem;
   letter-spacing: 0.165em;
   width: 10rem;
