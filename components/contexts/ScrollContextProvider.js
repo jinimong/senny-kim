@@ -22,7 +22,9 @@ export default function ScrollContextProvider({ children }) {
   }, []);
 
   return (
-    <ScrollContext.Provider value={{ offsetY, clientHeight, onScroll }}>
+    <ScrollContext.Provider
+      value={{ offsetY, setOffsetY, clientHeight, onScroll }}
+    >
       <div onContextMenu={prevent} onDragStart={prevent}>
         {children}
       </div>

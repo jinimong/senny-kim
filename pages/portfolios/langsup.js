@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import Dots from '../../components/atoms/Dots';
 import Footer from '../../components/atoms/Footer';
@@ -78,8 +79,12 @@ const DetailContainer = styled.section`
 `;
 
 export default function LangsUp() {
-  const { offsetY, clientHeight, onScroll } = useScrollContext();
+  const { offsetY, setOffsetY, clientHeight, onScroll } = useScrollContext();
   const halfClientHeight = clientHeight / 2;
+
+  useEffect(() => {
+    setOffsetY(0);
+  }, []);
 
   return (
     <Container onScroll={onScroll}>
